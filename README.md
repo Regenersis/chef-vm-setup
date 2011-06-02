@@ -1,3 +1,6 @@
+run wget https://github.com/Regenersis/chef-vm-setup/raw/master/Install && bash Install
+=======================================================================================
+
 Overview
 ========
 
