@@ -5,4 +5,4 @@ sudo apt-get install ruby -y
 sudo apt-get install rubygems -y
 sudo apt-get install irb -y
 sudo gem install rake 
-sudo gem install chef-solo
+sudo gem install chef
