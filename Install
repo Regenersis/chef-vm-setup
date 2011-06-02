@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo apt-get install git
-sudo apt-get install ruby
-sudo apt-get install rubygems
-sudo apt-get install irb
-sudo gem install rake
+sudo apt-get install git -y
+sudo apt-get install ruby -y
+sudo apt-get install rubygems -y
+sudo apt-get install irb -y
+sudo gem install rake 
 sudo gem install chef-solo
