@@ -1,8 +1,28 @@
 #!/bin/bash
 
+#get git hub details
+read -p "Enter your github username [Enter]: " username
+read -p "Enter your github password [Enter]: " password
+
+#generate key
+ssh-keygen -t rsa -C "$username"
+
+#read new keyfile
+SSHFILENAME=~/.ssh/id_rsa.pub
+while read line
+do
+SSHKEY=$line 
+done < $SSHFILENAME
+
+#post to github
+curl -u"$username:$password" -d"title=RegnersisVMKey&key=$SSHFILENAME" http://github.com/api/v2/json/user/key/add
+
+#install pre-requisites
 sudo apt-get install git -y
 sudo apt-get install ruby -y
 sudo apt-get install rubygems -y
 sudo apt-get install irb -y
-sudo gem install rake 
+sudo apt-get install rake -y
 sudo gem install chef
+
+
