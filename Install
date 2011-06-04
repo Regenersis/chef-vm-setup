@@ -1,21 +1,19 @@
 #!/bin/bash
 
 #get git hub details
-read -p "Enter your github username [Enter]: " username
-read -p "Enter your github password [Enter]: " password
-
-#generate key
-ssh-keygen -t rsa -C "$username"
-
-#read new keyfile
-SSHFILENAME=~/.ssh/id_rsa.pub
-while read line
+AUTHENTICATED=false
+while !$AUTHENTICATED
 do
-SSHKEY=$line 
-done < $SSHFILENAME
+  read -p "Enter your github username [Enter]: " USERNAME
+  stty -echo
+  read -p "Enter your github password [Enter]: " PASSWORD
+  stty echo
 
-#post to github
-curl -u"$username:$password" -d"title=RegnersisVMKey&key=$SSHFILENAME" http://github.com/api/v2/json/user/key/add
+  AUTH_CHECK=`exec wget -q -O - https://$USERNAME:$PASSWORD@github.com/api/v2/json/user/show --secure-protocol=auto --auth-no-challenge`
+  if [[ "$AUTH_CHECK" == "" ]] ; then
+    AUTHENTICATED=false
+  fi
+done
 
 #install pre-requisites
 sudo apt-get install git -y
@@ -25,4 +23,15 @@ sudo apt-get install irb -y
 sudo apt-get install rake -y
 sudo gem install chef
 
+#generate key
+ssh-keygen -t rsa -C "$USERNAME"
 
+#read new keyfile
+SSHFILENAME=~/.ssh/id_rsa.pub
+while read line
+do
+SSHKEY=$line 
+done < $SSHFILENAME
+
+#post to github
+curl -u"$USERNAME:$PASSWORD" -d"title=RegnersisVMKey&key=$SSHKEY" http://github.com/api/v2/json/user/key/add
