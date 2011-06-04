@@ -9,8 +9,11 @@ do
   stty echo
 
   AUTH_CHECK=`exec wget -q -O - https://$USERNAME:$PASSWORD@github.com/api/v2/json/user/show --secure-protocol=auto --auth-no-challenge`
-  if [[ "$AUTH_CHECK" == "" ]] ; then
+
+  if [ ! "$AUTH_CHECK" == ""  ] ; then
     break
+  else
+    echo Incorrect username/password combination
   fi
 done
 
