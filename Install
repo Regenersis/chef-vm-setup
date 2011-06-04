@@ -23,7 +23,7 @@ sudo apt-get install ruby -y
 sudo apt-get install rubygems -y
 sudo apt-get install irb -y
 sudo apt-get install rake -y
-sudo gem install chef
+sudo gem install chef --no-ri --no-rdoc
 
 #generate key
 ssh-keygen -t rsa -C "$USERNAME"
