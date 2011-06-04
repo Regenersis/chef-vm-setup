@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #get git hub details
-AUTHENTICATED=false
-while !$AUTHENTICATED
+while ! $AUTHENTICATED
 do
   read -p "Enter your github username [Enter]: " USERNAME
   stty -echo
@@ -11,7 +10,7 @@ do
 
   AUTH_CHECK=`exec wget -q -O - https://$USERNAME:$PASSWORD@github.com/api/v2/json/user/show --secure-protocol=auto --auth-no-challenge`
   if [[ "$AUTH_CHECK" == "" ]] ; then
-    AUTHENTICATED=false
+    break
   fi
 done
 
