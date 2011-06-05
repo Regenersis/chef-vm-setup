@@ -39,3 +39,7 @@ done < $SSHFILENAME
 
 #post to github
 curl -u"$USERNAME:$PASSWORD" -d"title=RegnersisVMKey&key=$SSHKEY" http://github.com/api/v2/json/user/key/add
+
+git clone git@github.com:Regenersis/chef-vm-setup.git
+
+chef-solo -c ./chef-vm-setup/solo.rb
