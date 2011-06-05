@@ -26,7 +26,7 @@ sudo apt-get install ruby -y
 sudo apt-get install rubygems -y
 sudo apt-get install irb -y
 sudo apt-get install rake -y
-sudo apt-get install curl
+sudo apt-get install curl -y
 sudo gem install chef --no-ri --no-rdoc
 
 
