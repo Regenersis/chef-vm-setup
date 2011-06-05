@@ -17,16 +17,18 @@ do
   fi
 done
 
+#generate key
+ssh-keygen -t rsa -C "$USERNAME"
+
 #install pre-requisites
 sudo apt-get install git -y
 sudo apt-get install ruby -y
 sudo apt-get install rubygems -y
 sudo apt-get install irb -y
 sudo apt-get install rake -y
+sudo apt-get install curl
 sudo gem install chef --no-ri --no-rdoc
 
-#generate key
-ssh-keygen -t rsa -C "$USERNAME"
 
 #read new keyfile
 SSHFILENAME=~/.ssh/id_rsa.pub
