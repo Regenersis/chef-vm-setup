@@ -17,4 +17,4 @@
 # limitations under the License.
 
 
-include_receipe "mysql"
+include_recipe "mysql"
