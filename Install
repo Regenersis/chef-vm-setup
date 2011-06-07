@@ -46,4 +46,4 @@ PATH=$PATH:/var/lib/gems/1.8/bin
 git clone git@github.com:Regenersis/chef-vm-setup.git
 
 cd chef-vm-setup
-chef-solo -c ./solo.rb
+chef-solo -c ./solo.rb -j ./dna.json
