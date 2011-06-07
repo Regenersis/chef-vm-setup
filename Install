@@ -38,7 +38,7 @@ SSHKEY=$SSHKEY$line
 done < $SSHFILENAME
 
 #post to github
-curl -u"$USERNAME:$PASSWORD" -d"title=chef_vm_setup&key=$SSHKEY" http://github.com/api/v2/json/user/key/add
+curl -u "pythonandchips:Monty100" -d "{\"key\": \"$SSHKEY\", \"title\": \"chef_vm_setup\"" https://api.github.com/user/keys 
 
 #add gems path to console
 PATH=$PATH:/var/lib/gems/1.8/bin
