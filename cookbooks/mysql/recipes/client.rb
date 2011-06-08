@@ -17,8 +17,8 @@
 # limitations under the License.
 #
 
+user "root"
 package "mysql-devel" do
-  user "root"
   package_name value_for_platform(
     [ "centos", "redhat", "suse", "fedora"] => { "default" => "mysql-devel" },
     ["debian", "ubuntu"] => { 5.0 => 'libmysqlclient15-dev', "default" =>  'libmysqlclient-dev'},
@@ -28,7 +28,6 @@ package "mysql-devel" do
 end
 
 package "mysql-client" do
-  user "root"
   package_name value_for_platform(
     [ "centos", "redhat", "suse", "fedora"] => { "default" => "mysql" },
     "default" => "mysql-client"
