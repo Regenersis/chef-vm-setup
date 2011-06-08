@@ -18,6 +18,7 @@
 #
 
 package "mysql-devel" do
+  user "root"
   package_name value_for_platform(
     [ "centos", "redhat", "suse", "fedora"] => { "default" => "mysql-devel" },
     ["debian", "ubuntu"] => { 5.0 => 'libmysqlclient15-dev', "default" =>  'libmysqlclient-dev'},
@@ -27,6 +28,7 @@ package "mysql-devel" do
 end
 
 package "mysql-client" do
+  user "root"
   package_name value_for_platform(
     [ "centos", "redhat", "suse", "fedora"] => { "default" => "mysql" },
     "default" => "mysql-client"
@@ -35,7 +37,7 @@ package "mysql-client" do
 end
 
 if platform?(%w{debian ubuntu redhat centos fedora suse})
-
+  user "root"
   package "mysql-ruby" do
     package_name value_for_platform(
       [ "centos", "redhat", "suse", "fedora"] => { "default" => "ruby-mysql" },
