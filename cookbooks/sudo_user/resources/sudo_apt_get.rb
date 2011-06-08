@@ -1,3 +1,4 @@
+require 'chef/provider/package/apt'
 class Chef
   class Provider
     class Package
