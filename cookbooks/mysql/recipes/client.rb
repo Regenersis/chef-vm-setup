@@ -19,37 +19,18 @@
 
 user "root"
 package "mysql-devel" do
-  package_name value_for_platform(
-    [ "centos", "redhat", "suse", "fedora"] => { "default" => "mysql-devel" },
-    ["debian", "ubuntu"] => { 5.0 => 'libmysqlclient15-dev', "default" =>  'libmysqlclient-dev'},
-    "default" => 'libmysqlclient-dev'
-  )
+  package_name 'libmysqlclient-dev'
   action :install
 end
 
 package "mysql-client" do
-  package_name value_for_platform(
-    [ "centos", "redhat", "suse", "fedora"] => { "default" => "mysql" },
-    "default" => "mysql-client"
-  )
+  package_name "mysql-client"
   action :install
 end
 
-if platform?(%w{debian ubuntu redhat centos fedora suse})
-  user "root"
-  package "mysql-ruby" do
-    package_name value_for_platform(
-      [ "centos", "redhat", "suse", "fedora"] => { "default" => "ruby-mysql" },
-      ["debian", "ubuntu"] => { "default" => 'libmysql-ruby' },
-      "default" => 'libmysql-ruby'
-    )
-    action :install
-  end
-
-else
-
-  gem_package "mysql" do
-    action :install
-  end
-
+user "root"
+package "mysql-ruby" do
+  package_name 'libmysql-ruby'
+  action :install
 end
+
