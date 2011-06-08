@@ -44,7 +44,7 @@ class Chef
 
 
         def install_package(name, version)
-          run_command_with_system_locale(
+          run_command_with_systems_locale(
             :command => "sudo apt-get -y -q #{expand_options(@new_resource.options)} install #{name}=#{version}",
             :environment => {
               "DEBIAN_FRONTEND" => "noninteractive"
