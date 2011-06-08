@@ -26,33 +26,32 @@ node.set_unless['mysql']['server_root_password']   = ""
 node.set_unless['mysql']['server_repl_password']   = ""
 
 
-  directory "/var/cache/local/preseeding" do
-    owner "root"
-    group "root"
-    mode 0755
-    recursive true
-  end
+directory "/var/cache/local/preseeding" do
+  owner "root"
+  group "root"
+  mode 0755
+  recursive true
+end
 
-  execute "preseed mysql-server" do
-    command "debconf-set-selections /var/cache/local/preseeding/mysql-server.seed"
-    action :nothing
-  end
+execute "preseed mysql-server" do
+  command "debconf-set-selections /var/cache/local/preseeding/mysql-server.seed"
+  action :nothing
+end
 
-  template "/var/cache/local/preseeding/mysql-server.seed" do
-    source "mysql-server.seed.erb"
-    owner "root"
-    group "root"
-    mode "0600"
-    notifies :run, resources(:execute => "preseed mysql-server"), :immediately
-  end
+template "/var/cache/local/preseeding/mysql-server.seed" do
+  source "mysql-server.seed.erb"
+  owner "root"
+  group "root"
+  mode "0600"
+  notifies :run, resources(:execute => "preseed mysql-server"), :immediately
+end
 
-  template "/etc/mysql/debian.cnf" do
-    source "debian.cnf.erb"
-    owner "root"
-    group "root"
-    mode "0600"
-  end
-
+template "/etc/mysql/debian.cnf" do
+  source "debian.cnf.erb"
+  owner "root"
+  group "root"
+  mode "0600"
+end
 
 package "mysql-server" do
   action :install
