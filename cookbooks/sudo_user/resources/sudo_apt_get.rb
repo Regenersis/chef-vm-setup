@@ -1,4 +1,8 @@
-require 'chef'
+require 'chef/provider/package'
+require 'chef/mixin/command'
+require 'chef/resource/package'
+require 'chef/provider/package/apt'
+
 class Chef
   class Provider
     class Package
