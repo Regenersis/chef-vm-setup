@@ -20,6 +20,15 @@
 package "vim"
 package "vim-gnome"
 
+[".vim", ".vim/bundle"].each do |dir|
+  directory "/home/#{node[:user]}/#{dir}" do
+    owner node[:user]
+    group node[:user]
+    mode "0755"
+    action :create
+  end
+end
+
 node[:vim_plugins].each do |repo|
   dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-")
   git "/home/#{node[:user]}/.vim/bundles/#{dirname}" do
