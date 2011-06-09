@@ -31,7 +31,7 @@ end
 
 node[:vim_plugins].each do |repo|
   dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-")
-  git "/home/#{node[:user]}/.vim/bundles/#{dirname}" do
+  git "/home/#{node[:user]}/.vim/bundle/#{dirname}" do
     user node[:user]
     group node[:user]
     repository repo
