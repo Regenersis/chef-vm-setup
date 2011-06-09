@@ -21,12 +21,12 @@ done
 ssh-keygen -t rsa -C "$USERNAME"
 
 #install pre-requisites
-sudo apt-get install git -y
-sudo apt-get install ruby -y
-sudo apt-get install rubygems -y
-sudo apt-get install irb -y
-sudo apt-get install rake -y
-sudo apt-get install curl -y
+sudo apt-get install git -y -q
+sudo apt-get install ruby -y -q
+sudo apt-get install rubygems -y -q
+sudo apt-get install irb -y -q
+sudo apt-get install rake -y -q
+sudo apt-get install curl -y -q
 sudo gem install chef --no-ri --no-rdoc
 
 
