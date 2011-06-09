@@ -5,6 +5,17 @@ run wget https://github.com/Regenersis/chef-vm-setup/raw/master/Install && bash 
 
 This will download and install all require packages for development environment
 
+TODOS
+-----
+Setup pathogen for vim plugins
+add various dot files
+install rvm
+  setup rubies
+  setup gemsets
+install kdiff
+install gitk
+
+
 Installed Packages
 ==================
 
@@ -47,3 +58,5 @@ ruby-focused-unit-test-vim (pythonandchips fork)
 snipmate
 snipmate-snippets
 vim-supertab
+
+
