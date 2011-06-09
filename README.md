@@ -18,7 +18,10 @@ rake
 curl
 mysql-server
 mysql-client
-
+rabbitmq
+couchdb
+vim
+gvim
 
 Installed Gems
 ==============
@@ -27,3 +30,20 @@ System Gems
 -----------
 
 chef
+
+
+Vim Plugins Installed
+=====================
+
+ack-vim
+autotag
+colorscheme
+command-t
+cucumber-vim (pythonandchips fork)
+vim-matchit
+vim-rails
+vim-ruby-refactoring
+ruby-focused-unit-test-vim (pythonandchips fork)
+snipmate
+snipmate-snippets
+vim-supertab
