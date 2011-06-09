@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "mysql::server"
-include_recipe "rabbitmq"
-include_recipe "couchdb"
+#include_recipe "mysql::server"
+#include_recipe "rabbitmq"
+#include_recipe "couchdb"
 include_recipe "vim"
