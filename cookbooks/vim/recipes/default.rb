@@ -27,7 +27,7 @@ node[:vim_plugins].each do |repo|
     group node[:user]
     repository repo
     reference "master"
-    action :clone
+    action :sync
   end
 end
 
