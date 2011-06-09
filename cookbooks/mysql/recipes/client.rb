@@ -20,19 +20,15 @@
 package "mysql-devel" do
   package_name 'libmysqlclient-dev'
   action :install
-  provider Chef::Provider::Package::SudoAptGet
 end
 
 package "mysql-client" do
   package_name "mysql-client"
   action :install
-  provider Chef::Provider::Package::SudoAptGet
 end
 
-user "root"
 package "mysql-ruby" do
   package_name 'libmysql-ruby'
   action :install
-  provider Chef::Provider::Package::SudoAptGet
 end
 
