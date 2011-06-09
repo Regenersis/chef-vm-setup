@@ -41,9 +41,9 @@ done < $SSHFILENAME
 curl -u "$USERNAME:$PASSWORD" -d "{\"key\": \"$SSHKEY\", \"title\": \"chef_vm_setup\"" https://api.github.com/user/keys 
 
 #add gems path to console
-PATH=$PATH:/var/lib/gems/1.8/bin
+export PATH=$PATH:/var/lib/gems/1.8/bin
 
 git clone git@github.com:Regenersis/chef-vm-setup.git
 
 cd chef-vm-setup
-chef-solo -c ./solo.rb -j ./sudo_dna.json
+sudo /var/lib/gems/1.8/bin/chef-solo -c ./solo.rb -j ./sudo_dna.json
