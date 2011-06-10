@@ -7,7 +7,7 @@ git "/home/#{node[:user]}/pathogen"  do
 end
 
 remote_directory "/home/#{node[:user]}/.vim" do
-  source "/home/#{node[:user]}/pathogen/auto_load"
+  path "/home/#{node[:user]}/pathogen/auto_load"
   owner node[:user]
   group node[:user]
   mode "0775"
