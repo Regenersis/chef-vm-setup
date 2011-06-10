@@ -29,7 +29,7 @@ package "vim-gnome"
   end
 end
 
-pakage "vim::pathogen"
+package "vim::pathogen"
 
 node[:vim_plugins].each do |repo|
   dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-")
