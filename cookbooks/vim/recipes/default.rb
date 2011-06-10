@@ -29,6 +29,8 @@ package "vim-gnome"
   end
 end
 
+pakage "vim::pathogen"
+
 node[:vim_plugins].each do |repo|
   dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-")
   git "/home/#{node[:user]}/.vim/bundle/#{dirname}" do
