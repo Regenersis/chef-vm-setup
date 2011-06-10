@@ -1,4 +1,4 @@
-git "/home/#{node[:user]}/pathogen"  do
+git "/home/#{node[:user]}/.vim/pathogen"  do
   user node[:user]
   group node[:user]
   repository "https://github.com/tpope/vim-pathogen.git"
@@ -6,13 +6,6 @@ git "/home/#{node[:user]}/pathogen"  do
   action :sync
 end
 
-remote_directory "/home/#{node[:user]}/.vim" do
-  path "/home/#{node[:user]}/pathogen/auto_load"
-  owner node[:user]
-  group node[:user]
-  mode "0775"
-  files_owner node[:user]
-  files_group node[:user]
-  files_mode "0644"
-  
+link "/home/#{node[:user]}/.vim/pathogen/auto_load" do
+  to "/home/#{node[:user]}/.vim/bundle"
 end
