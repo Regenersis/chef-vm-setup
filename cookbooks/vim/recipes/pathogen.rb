@@ -1,11 +1,13 @@
-git "/home/#{node[:user]}/.vim/pathogen"  do
-  user node[:user]
+directory "/home/#{node[:user]}/.vim/autoload" do
+  owner node[:user]
   group node[:user]
-  repository "https://github.com/tpope/vim-pathogen.git"
-  reference "master"
-  action :sync
+  mode "0755"
+  action :create
 end
 
-link "/home/#{node[:user]}/.vim/autoload" do
-  to "/home/#{node[:user]}/.vim/pathogen/autoload"
+remote_file "/home/#{node[:user]}/.vim/autoload/pathogen.vim" do
+  source "pathogen/autoload/pathogen.vim"
+  owner node[:user]
+  group node[:user]
+  mode "0755"
 end
