@@ -6,7 +6,7 @@ directory "/home/#{node[:user]}/.vim/autoload" do
 end
 
 remote_file "/home/#{node[:user]}/.vim/autoload/pathogen.vim" do
-  source "pathogen/autoload/pathogen.vim"
+  source "https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
   owner node[:user]
   group node[:user]
   mode "0755"
