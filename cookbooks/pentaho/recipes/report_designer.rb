@@ -1,5 +1,5 @@
 remote_file "/home/#{node[:user]}/report-designer.tar.gz" do
-  source "http://sourceforge.net/projects/pentaho/files/Report%20Designer/3.8.0-stable/prd-ce-3.8.0-stable.tar.gz"
+  source "http://downloads.sourceforge.net/project/pentaho/Report%20Designer/3.8.0-stable/prd-ce-3.8.0-stable.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fpentaho%2Ffiles%2FReport%2520Designer%2F3.8.0-stable%2F&ts=1307919352&use_mirror=ignum"
 end
 
 script "install pentaho" do
