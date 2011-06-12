@@ -11,10 +11,13 @@ script "install rubymine" do
   cwd "/home/#{node[:user]}"
   code <<-EOH
     tar -zxvf RubyMine-3.1.1.tar.gz
-    cp RubyMine-3.1.1 /opt/rubymine -R
+    cp RubyMine-3.1.1 #{node[:rubymine][:install_dir]} -R
   EOH
 end
 
-link "/usr/bin/rubymine" do
-  to "/opt/rubymine/bin/rubymine.sh"
+template "/usr/bin/rubymine" do
+  source "rubymine.erb"
+  variables(
+    :install_dir => node[:rubymine][:install_dir]
+  )
 end
