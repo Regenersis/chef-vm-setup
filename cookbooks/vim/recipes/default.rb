@@ -30,6 +30,9 @@ package "vim-gnome"
 end
 
 template "/home/#{node[:user]}/.vimrc" do 
+  owner node[:user]
+  group node[:user]
+  mode "0755"  
   source "vimrc.erb"
 end
 
