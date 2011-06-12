@@ -1,5 +1,5 @@
 node[:vim_plugins].each do |repo|
-  dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-")
+  dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-").gsub("-vim", "").gsub("vim-", "")
   git "/home/#{node[:user]}/.vim/bundle/#{dirname}" do
     user node[:user]
     group node[:user]
