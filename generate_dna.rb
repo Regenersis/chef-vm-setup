@@ -17,7 +17,7 @@ dna = {
     "https://github.com/msanders/snipmate.vim.git",
     "https://github.com/scrooloose/snipmate-snippets.git",
     "https://github.com/tsaleh/vim-supertab.git"],
-  :node => {:dir => "/usr/local", :version => "0.4.8" }
+  :nodejs => {:dir => "/usr/local", :version => "0.4.8" }
 
 }
 
