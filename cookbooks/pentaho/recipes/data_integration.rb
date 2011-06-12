@@ -15,7 +15,7 @@ script "install pentaho" do
 end
 
 ["kitchen", "pan", "spoon"].each do |app|
-  tempate "/usr/bin/#{app}" do
+  template "/usr/bin/#{app}" do
     source "#{app}.erb"
     variables(
       :install_dir => node[:pentaho][:install_dir]
