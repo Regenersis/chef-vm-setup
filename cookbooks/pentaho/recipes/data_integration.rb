@@ -1,4 +1,4 @@
-remote_file "/home/#{node[:user]}/report-designer.tar.gz" do
+remote_file "/home/#{node[:user]}/pentaho.tar.gz" do
   source "http://sourceforge.net/projects/pentaho/files/Data%20Integration/4.1.0-stable/pdi-ce-4.1.0-stable.tar.gz"
 end
 
@@ -7,16 +7,18 @@ script "install pentaho" do
   user "root"
   cwd "/home/#{node[:user]}"
   code <<-EOH
-    tar -zxvf report-designer.tar.gz 
+    tar -zxvf pentaho.tar.gz 
     mkdir #{node[:pentaho][:install_dir]}
-    cp data-integration #{node[:pentaho][:install_dir]}/data-integration -R
+    cp pentaho #{node[:pentaho][:install_dir]}/data-integration -R
     #{node[:pentaho][:install_dir]}/data_integration/set-pentaho-env
   EOH
 end
 
-tempate "/usr/bin/report-designer" do
-  source "report-designer.erb"
-  variables(
-    :install_dir => node[:pentaho][:install_dir]
-  )
+["kitchen", "pan", "spoon"].each do |app|
+  tempate "/usr/bin/#{app}" do
+    source "#{app}.erb"
+    variables(
+      :install_dir => node[:pentaho][:install_dir]
+    )
+  end
 end
