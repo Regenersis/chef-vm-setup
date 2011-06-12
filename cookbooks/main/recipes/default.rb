@@ -20,5 +20,5 @@
 #include_recipe "rabbitmq"
 #include_recipe "couchdb"
 #include_recipe "vim"
-include_recipe "java::sun"
-#include_recipe "rubymine"
+#include_recipe "java::sun"
+include_recipe "rubymine"
