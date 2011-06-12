@@ -29,16 +29,9 @@ package "vim-gnome"
   end
 end
 
-include_recipe "vim::pathogen"
-
-node[:vim_plugins].each do |repo|
-  dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-")
-  git "/home/#{node[:user]}/.vim/bundle/#{dirname}" do
-    user node[:user]
-    group node[:user]
-    repository repo
-    reference "master"
-    action :sync
-  end
+template "/home/#{node[:user]}/.vimrc" do 
+  source "vimrc.erb"
 end
 
+include_recipe "vim::pathogen"
+include_recipe "vim::plugins"
