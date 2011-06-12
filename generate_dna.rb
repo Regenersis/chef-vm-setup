@@ -16,7 +16,9 @@ dna = {
     "git@github.com:pythonandchips/ruby_focused_unit_test_vim.git",
     "https://github.com/msanders/snipmate.vim.git",
     "https://github.com/scrooloose/snipmate-snippets.git",
-    "https://github.com/tsaleh/vim-supertab.git"]
+    "https://github.com/tsaleh/vim-supertab.git"],
+  :node => {:dir => "/usr/local", :version => "0.4.8" }
+
 }
 
 File.open("dna.json", 'w'){|f| f.write(dna.to_json)}
