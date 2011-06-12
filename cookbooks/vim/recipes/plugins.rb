@@ -13,7 +13,7 @@ end
 script "install command-t" do
   interpreter "bash"
   user node[:user]
-  cwd "/home/#{node[:user]}/.vim/bundle/command-t/ruby/command-t"
+  cwd "/home/#{node[:user]}/.vim/bundle/Command-T/ruby/command-t"
   code <<-EOH
     ruby extconf.rb
     make
