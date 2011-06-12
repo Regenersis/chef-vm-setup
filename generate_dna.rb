@@ -20,7 +20,6 @@ dna = {
   :nodejs => {:dir => "/usr/local", :version => "0.4.8" },
   :pentaho => {:install_dir => "/opt/pentaho"},
   :rubymine => {:install_dir => "/opt/rubymine"}
-
 }
 
 File.open("dna.json", 'w'){|f| f.write(dna.to_json)}

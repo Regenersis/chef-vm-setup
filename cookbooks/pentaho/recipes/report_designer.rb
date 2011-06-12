@@ -12,7 +12,7 @@ script "install pentaho" do
   EOH
 end
 
-tempate "/usr/bin/report-designer" do
+template "/usr/bin/report-designer" do
   source "report-designer.erb"
   variables(
     :install_dir => node[:pentaho][:install_dir]
