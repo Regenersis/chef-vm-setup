@@ -1,6 +1,6 @@
 require "rest-client"
 
-package "kdiff"
+package "kdiff3"
 
 package "gitk"
 
