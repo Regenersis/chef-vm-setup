@@ -7,7 +7,7 @@ script "install pentaho" do
     tar -zxvf pdi-ce-4.1.0-stable.tar.gz 
     mkdir #{node[:pentaho][:install_dir]}
     cp data-integration #{node[:pentaho][:install_dir]}/data-integration -R
-    #{node[:pentaho][:install_dir]}/data_integration/set-pentaho-env.sh
+    #{node[:pentaho][:install_dir]}/data-integration/set-pentaho-env.sh
   EOH
 end
 
