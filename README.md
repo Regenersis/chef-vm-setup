@@ -13,8 +13,6 @@ Setup pathogen for vim plugins
 - install rvm
 -  setup rubies
 -  setup gemsets
-- install kdiff
-- install gitk
 
 
 Installed Packages
@@ -38,6 +36,13 @@ The following are installed from there installed from default packages
 - nodejs
 - pentaho data-integration
 - pentaho report-designer
+- kdiff
+- gitk
+
+System Configurations
+=====================
+
+Kdiff set for both merge tool and diff tool for git
 
 Installed Gems
 ==============
