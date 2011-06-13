@@ -1,3 +1,5 @@
+require "rest-client"
+
 package "kdiff"
 
 package "gitk"
