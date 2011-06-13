@@ -3,11 +3,11 @@ script "install pentaho" do
   user "root"
   cwd "/home/#{node[:user]}"
   code <<-EOH
-    wget http://downloads.sourceforge.net/project/pentaho/Data%20Integration/4.1.0-stable/pdi-ce-4.1.0-stable.tar.gz
-    tar -zxvf pdi-ce-4.1.0-stable.tar.gz 
+    wget http://downloads.sourceforge.net/project/pentaho/Data%20Integration/4.1.0-stable/pdi-ce-4.1.0-stable.tar.gz -O data_integration.tar.gz
+    tar -zxvf data_integration.tar.gz
     mkdir #{node[:pentaho][:install_dir]}
-    cp data-integration #{node[:pentaho][:install_dir]}/data-integration -R
-    #{node[:pentaho][:install_dir]}/data-integration/set-pentaho-env.sh
+    cp data-integration /opt/data-integration -R
+    /opt/data-integration/set-pentaho-env.sh
   EOH
 end
 
