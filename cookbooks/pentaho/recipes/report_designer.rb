@@ -1,11 +1,11 @@
 script "install pentaho" do
   interpreter "bash"
   user "root"
-  cwd "/home/#{node[:user]}"
+  cwd node[:temp_folder]
   code <<-EOH
-    wgt http://downloads.sourceforge.net/project/pentaho/Report%20Designer/3.8.0-stable/prd-ce-3.8.0-stable.tar.gz -O report-designer.tar.gz
+    wget http://downloads.sourceforge.net/project/pentaho/Report%20Designer/3.8.0-stable/prd-ce-3.8.0-stable.tar.gz -O report-designer.tar.gz
     tar -zxvf report-designer.tar.gz
-    cp report-designer /opt/report-designer -R
+    cp report-designer #{node[:pentaho][:install_dir]}/report-designer -R
   EOH
 end
 

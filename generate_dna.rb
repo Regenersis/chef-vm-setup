@@ -18,8 +18,9 @@ dna = {
     "https://github.com/scrooloose/snipmate-snippets.git",
     "https://github.com/tsaleh/vim-supertab.git"],
   :nodejs => {:dir => "/usr/local", :version => "0.4.8" },
-  :pentaho => {:install_dir => "/opt/pentaho"},
-  :rubymine => {:install_dir => "/opt/rubymine"}
+  :pentaho => {:install_dir => "/opt"},
+  :rubymine => {:install_dir => "/opt/rubymine"},
+  :temp_folder => "/tmp"
 }
 
 File.open("dna.json", 'w'){|f| f.write(dna.to_json)}
