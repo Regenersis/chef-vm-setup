@@ -24,4 +24,5 @@
 #include_recipe "rubymine"
 #include_recipe "nodejs"
 #include_recipe "pentaho"
-include_recipe "github"
+#include_recipe "github"
+include_recipe "dotfiles"
