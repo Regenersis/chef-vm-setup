@@ -5,7 +5,7 @@ package "kdiff"
 package "gitk"
 
 template "/home/#{node[:user]}/.gitconfig" do
-  github_details = RestClient.get("http://api.github.com/users/#{node[:github][:username]}")
+  github_details = RestClient.get("https://api.github.com/users/#{node[:github][:username]}")
   source "gitconfig.erb"
   owner node[:user]
   group node[:user]
