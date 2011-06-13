@@ -47,6 +47,6 @@ git clone git@github.com:Regenersis/chef-vm-setup.git
 
 cd chef-vm-setup
 
-ruby generate_dna.rb $USER
+ruby generate_dna.rb $USER $USERNAME $PASSWORD
 
 sudo /var/lib/gems/1.8/bin/chef-solo -c solo.rb -j dna.json
