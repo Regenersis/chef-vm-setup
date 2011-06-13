@@ -11,6 +11,7 @@ end
 
 template "/usr/bin/report-designer" do
   source "report-designer.erb"
+  mode "0755"
   variables(
     :install_dir => node[:pentaho][:install_dir]
   )

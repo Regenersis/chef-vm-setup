@@ -14,6 +14,7 @@ end
 ["kitchen", "pan", "spoon"].each do |app|
   template "/usr/bin/#{app}" do
     source "#{app}.erb"
+    mode "0755"
     variables(
       :install_dir => node[:pentaho][:install_dir]
     )
