@@ -1,1 +1,2 @@
-<%= @install_dir %>/data-integration/kitchen.sh &
+cd <%= @install_dir%>/data-integration
+(./kitchen.sh </dev/null &>/dev/null &)
