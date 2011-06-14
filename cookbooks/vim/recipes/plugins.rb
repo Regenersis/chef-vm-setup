@@ -1,11 +1,13 @@
 node[:vim_plugins].each do |repo|
-  dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-").gsub("-vim", "").gsub("vim-", "")
-  git "/home/#{node[:user]}/.vim/bundle/#{dirname}" do
-    user node[:user]
-    group node[:user]
-    repository repo
-    reference "master"
-    action :sync
+  retryable(:tries => 3, :on => RuntimeError) do
+    dirname = repo.split('/').last.gsub(".git", "").gsub(".", "-").gsub("-vim", "").gsub("vim-", "")
+    git "/home/#{node[:user]}/.vim/bundle/#{dirname}" do
+      user node[:user]
+      group node[:user]
+      repository repo
+      reference "master"
+      action :sync
+    end
   end
 end
 
