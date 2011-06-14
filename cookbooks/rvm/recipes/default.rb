@@ -5,7 +5,6 @@ end
 bash "install RVM" do
   user node[:user]
   code "bash < <( curl -s https://rvm.beginrescueend.com/install/rvm )"
-  not_if "rvm --version"
 end
 
 template "/home/#{node[:user]}/.bashrvm" do
