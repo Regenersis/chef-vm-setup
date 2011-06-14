@@ -18,21 +18,6 @@
 # limitations under the License.
 #
 
-# use the RabbitMQ repository instead of Ubuntu or Debian's
-# because there are very useful features in the newer versions
-apt_repository "rabbitmq" do
-  uri "http://www.rabbitmq.com/debian/"
-  distribution "testing"
-  components ["main"]
-  key "http://www.rabbitmq.com/rabbitmq-signing-key-public.asc"
-  action :add
-end
-
-# rabbitmq-server is not well-behaved as far as managed services goes
-# we'll need to add a LWRP for calling rabbitmqctl stop
-# while still using /etc/init.d/rabbitmq-server start
-# because of this we just put the rabbitmq-env.conf in place and let it rip
-
 directory "/etc/rabbitmq/" do
   owner "root"
   group "root"
