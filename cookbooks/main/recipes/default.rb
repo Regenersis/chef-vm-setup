@@ -26,3 +26,4 @@
 #include_recipe "pentaho"
 #include_recipe "github"
 include_recipe "dotfiles"
+include_recipe "rvm"

@@ -43,6 +43,8 @@ System Configurations
 =====================
 
 Kdiff set for both merge tool and diff tool for git
+.gemrc file ignores documentation for all gems
+.irbrc added wirble and interactive_editor gems. Auto requires rubygems
 
 Installed Gems
 ==============
