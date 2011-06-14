@@ -45,13 +45,26 @@ System Configurations
 =====================
 
 Kdiff set for both merge tool and diff tool for git
+
 .gemrc file ignores documentation for all gems
+
 .irbrc added wirble and interactive_editor gems. Auto requires rubygems
+
 .bashcommanddisplay sets rvm and branch display on terminal
+
 .bashhistory configure history for teminal
+
 .aliases add system aliases
+
 .paths added additional paths to session
+
 .bashrvm sets up rvm in terninal
+
+Installed Rubies
+================
+
+- Ruby 1.8.7
+- Jruby 1.6.0
 
 Installed Gems
 ==============
