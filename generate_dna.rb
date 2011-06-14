@@ -3,6 +3,7 @@ require "json"
 
 dna = {
   :user => ARGV[0],
+  :home_dir => "/home/#{ARGV[0]}",
   :github => {:username => ARGV[1], :password => ARGV[2]},
   :run_list => ["recipe[main]"],
   :vim_plugins => [
