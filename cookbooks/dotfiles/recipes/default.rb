@@ -19,7 +19,7 @@ file "/home/#{node[:user]}/.bashrc" do
   group node[:user]
   owner node[:user]
   mode "0644"
-  content dot_files.map{|df| "source .#{file}"}.join("\n")
+  content dot_files.map{|dot_file| "source .#{dot_file}"}.join("\n")
   action :create
 end
 
