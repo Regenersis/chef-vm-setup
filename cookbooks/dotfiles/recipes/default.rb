@@ -1,7 +1,7 @@
-dot_files = ["gemrc", "irbrc", "bashcommanddisplay",
-  "bashhistory", "aliases", "paths"]
+bash_files = ["bashcommanddisplay", "bashhistory", "aliases", "paths"]
+dot_files = ["gemrc", "irbrc"]
 
-dot_files.each do |file|
+(dot_files + bash_files).each do |file|
   template "/home/#{node[:user]}/.#{file}" do
     source "#{file}.erb"
     owner node[:user]
@@ -19,7 +19,7 @@ file "/home/#{node[:user]}/.bashrc" do
   group node[:user]
   owner node[:user]
   mode "0644"
-  content dot_files.map{|dot_file| "source .#{dot_file}"}.join("\n")
+  content bash_files.map{|bash_files| "source .#{bash_files}"}.join("\n")
   action :create
 end
 

@@ -28,7 +28,7 @@ end
 ruby_block "update with rvm source" do
   block do
     File.open("/home/#{node[:user]}/.bashrc", "a+") do |file|
-      file.write("source .bashrvm")
+      file.write("\nsource .bashrvm")
     end
   end
   action :create
