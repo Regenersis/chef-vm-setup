@@ -6,6 +6,7 @@ def retryable(options = {}, &block)
   begin
     return yield
   rescue retry_exception
+    Chef::Log.warn("Resouce failed. Retrying")
     retry if (retries -= 1) > 0
   end
 
