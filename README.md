@@ -9,10 +9,11 @@ TODOS
 -----
 Setup pathogen for vim plugins
 
-- add various dot files
-- install rvm
--  setup rubies
--  setup gemsets
+- setup rubies
+- setup gemsets
+- couchapp
+- coffeescript (that one is just for funzies really)
+- system configuration (time and keyboard)
 
 
 Installed Packages
@@ -38,6 +39,7 @@ The following are installed from there installed from default packages
 - pentaho report-designer
 - kdiff
 - gitk
+- rvm
 
 System Configurations
 =====================
@@ -45,6 +47,11 @@ System Configurations
 Kdiff set for both merge tool and diff tool for git
 .gemrc file ignores documentation for all gems
 .irbrc added wirble and interactive_editor gems. Auto requires rubygems
+.bashcommanddisplay sets rvm and branch display on terminal
+.bashhistory configure history for teminal
+.aliases add system aliases
+.paths added additional paths to session
+.bashrvm sets up rvm in terninal
 
 Installed Gems
 ==============

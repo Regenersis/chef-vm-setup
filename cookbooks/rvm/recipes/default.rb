@@ -12,7 +12,7 @@ template "/home/#{node[:user]}/.bashrvm" do
   group node[:user]
   owner node[:user]
   mode "0644"
-  variables (
+  variables(
     :user => node[:user]
   )
 end
