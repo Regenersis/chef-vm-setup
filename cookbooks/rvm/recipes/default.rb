@@ -28,11 +28,13 @@ file "/home/#{node[:user]}/.bashrc" do
   end
 end
 
-ruby_block "update with rvm source" do
-  block do
-    File.open("/home/#{node[:user]}/.bashrc", "a+"){|file| file.write("\nsource .bashrvm")}
-  end
-  action :create
+script "update with rvm source" do
+  interpreter "bash"
+  user node[:user]
+  cwd "/home/#{node[:user]}"
+  code <<-EOH
+    echo "source .bashrvm" >> .bashrc
+  EOH
   only_if do
     File.exists?("/home/#{node[:user]}/.bashrc")
   end
