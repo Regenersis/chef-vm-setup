@@ -30,9 +30,7 @@ end
 
 ruby_block "update with rvm source" do
   block do
-    File.open("/home/#{node[:user]}/.bashrc", "a+") do |file|
-      file.write("\nsource .bashrvm")
-    end
+    File.open("/home/#{node[:user]}/.bashrc", "a+"){|file| file.write("\nsource .bashrvm")}
   end
   action :create
   only_if do
