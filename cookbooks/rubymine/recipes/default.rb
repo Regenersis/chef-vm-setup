@@ -1,7 +1,7 @@
 #http://download.jetbrains.com/ruby/RubyMine-3.1.1.tar.gz
 #http://download.jetbrains.com/ruby/rubymine-2.0.2.tar.gz
 
-remote_file "/home/#{node[:user]}/RubyMine-3.1.1.tar.gz" do
+remote_file "#{node[:temp_folder]}/RubyMine-3.1.1.tar.gz" do
   source "http://download.jetbrains.com/ruby/RubyMine-3.1.1.tar.gz"
 end
 
