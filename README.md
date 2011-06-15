@@ -7,7 +7,6 @@ This will download and install all require packages for development environment
 
 TODOS
 -----
-Setup pathogen for vim plugins
 
 - setup rubies
 - setup gemsets
