@@ -19,8 +19,21 @@ file "/home/#{node[:user]}/.bashrc" do
   group node[:user]
   owner node[:user]
   mode "0644"
-  content bash_files.map{|bash_files| "source .#{bash_files}\n"}
   action :create
+end
+
+bash_files.each do |file| do
+  script "update with rvm source" do
+    interpreter "bash"
+    user node[:user]
+    cwd "/home/#{node[:user]}"
+    code <<-EOH
+      echo "source .#{file}" >> .bashrc
+    EOH
+    only_if do
+      File.exists?("/home/#{node[:user]}/.bashrc")
+    end
+  end
 end
 
 

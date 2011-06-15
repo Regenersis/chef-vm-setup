@@ -28,6 +28,7 @@ file "/home/#{node[:user]}/.bashrc" do
   end
 end
 
+
 script "update with rvm source" do
   interpreter "bash"
   user node[:user]
@@ -39,4 +40,3 @@ script "update with rvm source" do
     File.exists?("/home/#{node[:user]}/.bashrc")
   end
 end
-
