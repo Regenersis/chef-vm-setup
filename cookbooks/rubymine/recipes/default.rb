@@ -10,7 +10,7 @@ script "install rubymine" do
   user "root"
   cwd node[:temp_folder]
   code <<-EOH
-    tar -zxvf #{node[:temp_folder}/RubyMine-3.1.1.tar.gz
+    tar -zxvf #{node[:temp_folder]}/RubyMine-3.1.1.tar.gz
     cp RubyMine-3.1.1 #{node[:rubymine][:install_dir]} -R
   EOH
 end
