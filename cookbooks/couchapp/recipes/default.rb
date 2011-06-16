@@ -1,3 +1,5 @@
+include_recipe "python"
+
 script "install rubymine" do
   interpreter "bash"
   user "root"
