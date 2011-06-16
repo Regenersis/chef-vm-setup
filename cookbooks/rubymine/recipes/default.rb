@@ -17,6 +17,7 @@ end
 
 template "/usr/bin/rubymine" do
   source "rubymine.erb"
+  mode "0755"
   variables(
     :install_dir => node[:rubymine][:install_dir]
   )
