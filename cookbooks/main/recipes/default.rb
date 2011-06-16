@@ -30,4 +30,4 @@ include_recipe "github"
 include_recipe "dotfiles"
 include_recipe "rvm"
 include_recipe "coffeescript"
-
+include_recipe "rubies"
