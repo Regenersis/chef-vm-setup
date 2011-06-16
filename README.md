@@ -9,10 +9,7 @@ TODOS
 -----
 
 - setup gemsets
-- couchapp
-- coffeescript (that one is just for funzies really)
 - system configuration (time and keyboard)
-- npm (node package manager)
 
 
 Installed Packages
@@ -39,6 +36,9 @@ The following are installed from there installed from default packages
 - kdiff
 - gitk
 - rvm
+- couchapp
+- coffeescript
+- npm
 
 
 System Configurations
