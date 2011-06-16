@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe "java::sun"
+#include_recipe "java::sun"
 
 case node.platform
 when "centos","redhat","fedora"

@@ -18,11 +18,11 @@
 
 
 include_recipe "mysql::server"
-include_recipe "ant"
 include_recipe "rabbitmq"
 include_recipe "couchdb"
 include_recipe "vim"
 include_recipe "java::sun"
+include_recipe "ant"
 include_recipe "rubymine"
 include_recipe "nodejs"
 include_recipe "pentaho"
@@ -30,3 +30,4 @@ include_recipe "github"
 include_recipe "dotfiles"
 include_recipe "rvm"
 include_recipe "coffeescript"
+
