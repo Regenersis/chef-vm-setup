@@ -8,7 +8,6 @@ This will download and install all require packages for development environment
 TODOS
 -----
 
-- setup rubies
 - setup gemsets
 - couchapp
 - coffeescript (that one is just for funzies really)
