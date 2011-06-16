@@ -22,7 +22,7 @@ file "/home/#{node[:user]}/.bashrc" do
   action :create
 end
 
-bash_files.each do |file| do
+bash_files.each do |file|
   script "update with rvm source" do
     interpreter "bash"
     user node[:user]
