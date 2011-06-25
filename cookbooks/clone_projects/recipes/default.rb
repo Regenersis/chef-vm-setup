@@ -4,6 +4,13 @@ rescue
 
 end
 
+directory "#{node[:home_dir]}/projects" do
+  owner node[:user]
+  group node[:user]
+  mode "0755"
+  action :create
+end
+
 github_api_url = "https://#{node[:github][:username]}:#{node[:github][:password]}@api.github.com"
 organisations_url = "#{github_api_url}/user/orgs"
 orgs = JSON.parse(RestClient.get(organisations_url))
