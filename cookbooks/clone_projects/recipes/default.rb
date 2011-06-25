@@ -13,7 +13,7 @@ orgs.each do |org|
   repos = JSON.parse(RestClient.get(repos_url))
 
   repos.each do |repo|
-    git "#{node[:home_dir}/projects/#{repo["name"]}" do
+    git "#{node[:home_dir]}/projects/#{repo["name"]}" do
       user node[:user]
       group node[:user]
       repository repo["ssh_url"]
