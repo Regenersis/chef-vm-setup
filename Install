@@ -43,9 +43,9 @@ curl -u "$USERNAME:$PASSWORD" -d "{\"key\": \"$SSHKEY\", \"title\": \"chef_vm_se
 #add gems path to console
 export PATH=$PATH:/var/lib/gems/1.8/bin
 
-git clone git@github.com:Regenersis/chef-vm-setup.git
+git clone git@github.com:Regenersis/chef-vm-setup.git /tmp/chef-vm-setup
 
-cd chef-vm-setup
+cd /tmp/chef-vm-setup
 
 ruby generate_dna.rb $USER $USERNAME $PASSWORD
 
