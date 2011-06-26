@@ -4,7 +4,7 @@ bash "create dhl gem set" do
   cwd "."
   user node[:user]
   code <<-EOH
-    . #{node[:home_dir]}/.bashrc"
+    . #{node[:home_dir]}/.bashrc
     rvm 1.8.7
     rvm gemset create o2_dhl
     rvm 1.8.7@o2_dhl
@@ -17,7 +17,7 @@ bash "create dhl gem set" do
   cwd "."
   user node[:user]
   code <<-EOH
-    . #{node[:home_dir]}/.bashrc"
+    . #{node[:home_dir]}/.bashrc
     rvm jruby
     rvm gemset create o2_dhl_jruby
     rvm jruby@o2_dhl_jruby
