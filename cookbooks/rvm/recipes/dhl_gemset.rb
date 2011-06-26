@@ -1,6 +1,6 @@
 ["o2_dhl", "o2_dhl_jruby"].each do |file|
   template "#{node[:temp_folder]}/#{file}.gems" do
-    source "#{file}.erb"
+    source "#{file}.gems.erb"
     group node[:user]
     owner node[:user]
     mode "0644"
