@@ -102,3 +102,8 @@ Issues
 
 - Cannot successfully configure system keyboard and time
 - Github occassionlly fails and restart of build required. Need to add graceful failure
+
+Future improvements
+===================
+
+- enable bundler on all projects and build gem set from these files
