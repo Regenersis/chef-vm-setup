@@ -107,3 +107,4 @@ Future improvements
 ===================
 
 - enable bundler on all projects and build gem set from these files
+- Run rake db:create and db:migrate for each cloned project
