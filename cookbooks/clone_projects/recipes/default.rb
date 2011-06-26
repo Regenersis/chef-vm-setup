@@ -18,8 +18,8 @@ orgs = JSON.parse(RestClient.get(organisations_url))
 orgs.each do |org|
   repos_url = "#{github_api_url}/orgs/#{org["login"]}/repos"
   repos = JSON.parse(RestClient.get(repos_url))
-  begin
-    repos.each do |repo|
+  repos.each do |repo|
+    unless repo["size"] == 0
       git "#{node[:home_dir]}/projects/#{repo["name"]}" do
         user node[:user]
         group node[:user]
@@ -28,7 +28,6 @@ orgs.each do |org|
         action :sync
       end
     end
-  rescue
   end
 end
 
