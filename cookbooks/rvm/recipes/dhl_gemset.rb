@@ -1,4 +1,4 @@
-["o2_dhl", "o2_dhl_jruby"] do |file|
+["o2_dhl", "o2_dhl_jruby"].each do |file|
   template "#{node[:temp_folder]}/#{file}.gems" do
     source "#{file}.erb"
     group node[:user]
