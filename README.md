@@ -5,12 +5,10 @@ run wget https://github.com/Regenersis/chef-vm-setup/raw/master/Install && bash 
 
 This will download and install all require packages for development environment
 
-TODOS
------
+Recommended OS
+==============
 
-- setup gemsets
-- system configuration (time and keyboard)
-
+This setup is tested only on Ubuntu Natty Narwhal (11.04). Any other install has not been tested and no guarantee of working
 
 Installed Packages
 ==================
@@ -58,13 +56,19 @@ Kdiff set for both merge tool and diff tool for git
 
 .paths added additional paths to session
 
-.bashrvm sets up rvm in terninal
+.bashrvm sets up rvm in terminal
 
 Installed Rubies
 ================
 
 - Ruby 1.8.7
 - Jruby 1.6.0
+
+RVM Gemsets
+===========
+
+1.8.7@dhl_o2
+jruby@dhl_o2_jruby
 
 Installed Gems
 ==============
