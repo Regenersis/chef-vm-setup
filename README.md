@@ -67,8 +67,10 @@ Installed Rubies
 RVM Gemsets
 ===========
 
-1.8.7@dhl_o2
-jruby@dhl_o2_jruby
+- 1.8.7@dhl_o2
+- jruby@dhl_o2_jruby
+
+Note: some gems may fail to install from gem file. Check error logs after install and install manually
 
 Installed Gems
 ==============
@@ -94,3 +96,9 @@ Vim Plugins Installed
 - snipmate
 - snipmate-snippets
 - vim-supertab
+
+Issues
+======
+
+- Cannot successfully configure system keyboard and time
+- Github occassionlly fails and restart of build required. Need to add graceful failure
