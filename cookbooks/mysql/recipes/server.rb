@@ -18,13 +18,12 @@
 #
 
 
+::Chef::Recipe.send(:include, Opscode::OpenSSL::Password)
+
 include_recipe "mysql::client"
 
 # generate all passwords
-node.set_unless['mysql']['server_debian_password'] = ""
-node.set_unless['mysql']['server_root_password']   = ""
-node.set_unless['mysql']['server_repl_password']   = ""
-
+node.set_unless['mysql']['server_debian_password'] = secure_password
 
 directory "/var/cache/local/preseeding" do
   owner "root"
