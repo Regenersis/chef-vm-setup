@@ -17,6 +17,7 @@ bash "create dhl gem set" do
     rvm gemset create o2_dhl
     rvm 1.8.7@o2_dhl
     gem sources -a http://gems.therepairline.co.uk
+    gem update --system 1.5.3
     rvm gemset import #{node[:temp_folder]}/o2_dhl.gems
   EOH
 end
