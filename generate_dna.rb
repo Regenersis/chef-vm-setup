@@ -24,7 +24,9 @@ dna = {
   :temp_folder => "/tmp",
   :run_list => ["recipe[main]"]
 }
-
+unless File.exists?("dna.json")
+  File.new("dna.json", "w")
+end
 File.open("dna.json", 'w'){|f| f.write(dna.to_json)}
 
 
