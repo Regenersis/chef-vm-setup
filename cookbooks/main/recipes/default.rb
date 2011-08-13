@@ -17,6 +17,7 @@
 # limitations under the License.
 
 
+include_recipe "npm"
 include_recipe "mysql::server"
 include_recipe "rabbitmq"
 include_recipe "couchdb"
@@ -25,7 +26,6 @@ include_recipe "java::sun"
 include_recipe "ant"
 include_recipe "rubymine"
 include_recipe "nodejs"
-include_recipe "npm"
 include_recipe "pentaho"
 include_recipe "github"
 include_recipe "dotfiles"
@@ -35,6 +35,7 @@ include_recipe "rubies"
 include_recipe "couchapp"
 #include_recipe "system_config"
 include_recipe "clone_projects"
+include_recipe "libcurl"
 include_recipe "rvm::dhl_gemset"
 
 
