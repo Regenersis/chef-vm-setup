@@ -2,3 +2,6 @@
 *.swp
 tags
 *.swo
+dna.json
+.redcar
+cache
