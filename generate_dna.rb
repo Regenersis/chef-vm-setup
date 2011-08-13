@@ -5,7 +5,6 @@ dna = {
   :user => ARGV[0],
   :home_dir => "/home/#{ARGV[0]}",
   :github => {:username => ARGV[1], :password => ARGV[2]},
-  :run_list => ["recipe[main]"],
   :vim_plugins => [
     "https://github.com/mileszs/ack.vim.git",
     "https://github.com/vim-scripts/AutoTag.git",
@@ -22,8 +21,21 @@ dna = {
   :nodejs => {:dir => "/usr/local", :version => "0.4.8" },
   :pentaho => {:install_dir => "/opt"},
   :rubymine => {:install_dir => "/opt/rubymine"},
-  :temp_folder => "/tmp"
+  :temp_folder => "/tmp",
+  :run_list => ["recipe[main]"]
 }
 
 File.open("dna.json", 'w'){|f| f.write(dna.to_json)}
+
+
+
+
+
+
+
+
+
+
+
+
 

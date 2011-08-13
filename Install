@@ -1,6 +1,9 @@
 #!/bin/bash
+#install with command single command
+#wget http://github.com/pythonandchips/chef-vm-setup/raw/master/Install && bash Install
 
-#get git hub details
+
+#get github details
 while [ ! $AUTHENTICATED ]
 do
   read -p "Enter your github username [Enter]: " USERNAME
@@ -40,9 +43,6 @@ done < $SSHFILENAME
 #post to github
 curl -u "$USERNAME:$PASSWORD" -d "{\"key\": \"$SSHKEY\", \"title\": \"chef_vm_setup\"" https://api.github.com/user/keys 
 
-#add gems path to console
-export PATH=$PATH:/var/lib/gems/1.8/bin
-
 git clone git@github.com:Regenersis/chef-vm-setup.git /tmp/chef-vm-setup
 
 cd /tmp/chef-vm-setup
@@ -50,3 +50,18 @@ cd /tmp/chef-vm-setup
 ruby generate_dna.rb $USER $USERNAME $PASSWORD
 
 sudo /var/lib/gems/1.8/bin/chef-solo -c solo.rb -j dna.json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
