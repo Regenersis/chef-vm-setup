@@ -77,7 +77,7 @@ template value_for_platform([ "centos", "redhat", "suse" , "fedora" ] => {"defau
   owner "root"
   group "root"
   mode "0644"
-  notifies :restart, resources(:service => "mysql"), :immediately
+#  notifies :restart, resources(:service => "mysql"), :immediately
 end
 
 unless Chef::Config[:solo]
@@ -89,7 +89,7 @@ unless Chef::Config[:solo]
   end
 end
 
-# set the root password on platforms 
+# set the root password on platforms
 # that don't support pre-seeding
 unless platform?(%w{debian ubuntu})
 
