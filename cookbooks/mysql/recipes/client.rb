@@ -50,5 +50,4 @@ else
   gem_package "mysql" do
     action :install
   end
-
 end
