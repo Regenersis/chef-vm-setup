@@ -31,7 +31,7 @@ sudo apt-get install irb -y -q
 sudo apt-get install rake -y -q
 sudo apt-get install curl -y -q
 sudo gem install chef --no-ri --no-rdoc
-
+sudo gem install mysql --no-ri --no-rdoc
 
 #read new keyfile
 SSHFILENAME=~/.ssh/id_rsa.pub
